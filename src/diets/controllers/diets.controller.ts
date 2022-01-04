@@ -1,6 +1,6 @@
 import { Controller, Get, Param, Post,Body,Delete,Put } from '@nestjs/common';
 import { DietsService } from './../services/diets.service';
-import { DietDto } from '../dto/diet';
+import { CreateDietDto,UpdateDietDto } from '../dto/diet';
 @Controller('api/diets')
 export class DietsController {
 
@@ -19,12 +19,12 @@ export class DietsController {
     }
 
     @Post()
-    create(@Body() createDietDto: DietDto){
+    create(@Body() createDietDto: CreateDietDto){
         return this.dietsService.create(createDietDto);
     }
 
     @Put('/:id')
-    update(@Param('id') id: number, @Body() updateDietDto: DietDto){
+    update(@Param('id') id: number, @Body() updateDietDto: UpdateDietDto){
         return this.dietsService.update(id, updateDietDto);
     }
 
