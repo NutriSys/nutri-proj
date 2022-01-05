@@ -4,3 +4,5 @@ node_modules/
 build/
 tmp/
 temp/
+postgres_data/
+dist/
