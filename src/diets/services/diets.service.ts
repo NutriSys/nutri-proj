@@ -2,6 +2,7 @@ import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
 import { Diet } from '../entities/diet.entity';
+import { CreateDietDto, UpdateDietDto } from "../dto/diet";
 
 @Injectable()
 export class DietsService {
@@ -15,14 +16,14 @@ export class DietsService {
   findOne(id: number) {
     return this.dietsRepository.findOne(id);
   }
-  create(diet: any) {
-    const newDiet = this.dietsRepository.create(diet);
+  create(createDietDto: CreateDietDto) {
+    const newDiet = this.dietsRepository.create(createDietDto);
     return this.dietsRepository.save(newDiet);
   }
-  async update(id: number, diet: any) {
-    const dieta = await this.dietsRepository.findOne(id);
-    this.dietsRepository.merge(dieta, diet);
-    return this.dietsRepository.save(dieta);
+  async update(id: number, updatedDietDto: UpdateDietDto) {
+    const oldDiet = await this.dietsRepository.findOne(id);
+    this.dietsRepository.merge(oldDiet, updatedDietDto);
+    return this.dietsRepository.save(updatedDietDto);
   }
 
   async delete(id: number) {

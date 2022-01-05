@@ -29,8 +29,8 @@ export class DietsController {
   }
 
   @Put('/:id')
-  update(@Param('id') id: number, @Body() updateDietDto: UpdateDietDto) {
-    return this.dietsService.update(id, updateDietDto);
+  update(@Param('id') id: number, @Body() updatedDietDto: UpdateDietDto) {
+    return this.dietsService.update(id, updatedDietDto);
   }
 
   @Delete('/:id')

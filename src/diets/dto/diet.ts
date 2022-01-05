@@ -11,7 +11,6 @@ export class CreateDietDto {
 
 //updateDietDto
 export class UpdateDietDto {
-  id?: number;
   name: string;
   description: string;
   cals: number;
