@@ -6,7 +6,7 @@ $ npm install
 
 ## Running Postgres Container
 ```bash
-$ docker-compose up database
+$ docker-compose up
 ```
 ## Running the app
 

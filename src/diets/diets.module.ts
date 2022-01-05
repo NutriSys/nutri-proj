@@ -5,10 +5,8 @@ import { DietsController } from './controllers/diets.controller';
 import { Diet } from './entities/diet.entity';
 
 @Module({
-  imports: [
-    TypeOrmModule.forFeature([Diet])
-  ],
+  imports: [TypeOrmModule.forFeature([Diet])],
   providers: [DietsService],
-  controllers: [DietsController]
+  controllers: [DietsController],
 })
 export class DietsModule {}

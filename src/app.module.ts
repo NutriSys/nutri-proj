@@ -2,7 +2,6 @@ import { Module } from '@nestjs/common';
 import { DietsModule } from './diets/diets.module';
 import { TypeOrmModule } from '@nestjs/typeorm';
 
-
 @Module({
   imports: [
     TypeOrmModule.forRoot({
@@ -17,7 +16,8 @@ import { TypeOrmModule } from '@nestjs/typeorm';
       retryDelay: 3000,
       retryAttempts: 10,
     }),
-    DietsModule],
+    DietsModule,
+  ],
   controllers: [],
   providers: [],
 })
