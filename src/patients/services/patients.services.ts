@@ -2,27 +2,27 @@ import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
 import { Patient } from '../entities/patient.entity';
-import { CreatePatientDto } from '../dtos/patient';
+import { CreatePatientDto } from '../dto/patient';
 
 @Injectable()
 export class PatientsService {
   constructor(
-    @InjectRepository(Patient) private dietsRepository: Repository<Patient>,
+    @InjectRepository(Patient) private patientRepo: Repository<Patient>,
   ) {}
 
   findAll() {
-    return this.dietsRepository.find();
+    return this.patientRepo.find();
   }
   findOne(id: number) {
-    return this.dietsRepository.findOne(id);
+    return this.patientRepo.findOne(id);
   }
   create(CreatePatientDto: CreatePatientDto) {
-    const newDiet = this.dietsRepository.create(CreatePatientDto);
-    return this.dietsRepository.save(newDiet);
+    const newPatient = this.patientRepo.create(CreatePatientDto);
+    return this.patientRepo.save(newPatient);
   }
 
   async delete(id: number) {
-    await this.dietsRepository.delete(id);
+    await this.patientRepo.delete(id);
     return true;
   }
 }

@@ -1,5 +1,6 @@
 import { Module } from '@nestjs/common';
 import { DietsModule } from './diets/diets.module';
+import { PatientsModule } from './patients/patients.module';
 import { TypeOrmModule } from '@nestjs/typeorm';
 
 @Module({
@@ -17,6 +18,7 @@ import { TypeOrmModule } from '@nestjs/typeorm';
       retryAttempts: 10,
     }),
     DietsModule,
+    PatientsModule,
   ],
   controllers: [],
   providers: [],
