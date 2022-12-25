@@ -1,7 +1,7 @@
 import { Controller, Get, Param, Post, Body } from '@nestjs/common';
 import { PatientsService } from '../services/patients.services';
 import { CreatePatientDto } from '../dto/patient';
-@Controller('api/diets')
+@Controller('api/patients')
 export class PatientsController {
   constructor(private readonly patientsService: PatientsService) {}
 

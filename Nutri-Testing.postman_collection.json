@@ -1,0 +1,50 @@
+{
+	"info": {
+		"_postman_id": "468081ec-2ec9-482a-9475-bf8aab987050",
+		"name": "Nutri-Testing",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "17376712"
+	},
+	"item": [
+		{
+			"name": "Diets",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/diets",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"diets"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Patients",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/patients",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"patients"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
