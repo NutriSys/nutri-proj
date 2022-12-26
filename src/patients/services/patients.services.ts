@@ -14,7 +14,7 @@ export class PatientsService {
     return this.patientRepo.find();
   }
   findOne(id: number) {
-    return this.patientRepo.findOne(id);
+    return this.patientRepo.findOne({ where: { idPatient: id } });
   }
   create(CreatePatientDto: CreatePatientDto) {
     const newPatient = this.patientRepo.create(CreatePatientDto);

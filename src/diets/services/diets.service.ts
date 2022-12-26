@@ -14,14 +14,14 @@ export class DietsService {
     return this.dietsRepository.find();
   }
   findOne(id: number) {
-    return this.dietsRepository.findOne(id);
+    return this.dietsRepository.findOne({ where: { id: id } });
   }
   create(createDietDto: CreateDietDto) {
     const newDiet = this.dietsRepository.create(createDietDto);
     return this.dietsRepository.save(newDiet);
   }
   async update(id: number, updatedDietDto: UpdateDietDto) {
-    const oldDiet = await this.dietsRepository.findOne(id);
+    const oldDiet = await this.dietsRepository.findOne({ where: { id: id } });
     this.dietsRepository.merge(oldDiet, updatedDietDto);
     return this.dietsRepository.save(updatedDietDto);
   }
