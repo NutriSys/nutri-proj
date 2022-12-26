@@ -17,6 +17,5 @@ export class CreatePatientDto {
   @IsNotEmpty()
   phoneNum: string;
 
-  @IsNotEmpty()
   anotations: string;
 }
