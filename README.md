@@ -35,33 +35,12 @@ $ npm run test:cov
 ```
 # Testable endpoints
 
-## Create
-```bash
-  GET http://localhost:3000/api/diets
-```
-## Create
-```bash
-  POST http://localhost:3000/api/diets
-  body : JSON
-{
-    "name":"example diet",
-    "description": "example diet",
-    "cals":"example diet"
-}
-```
-## Delete
-```bash
-  DEL http://localhost:3000/api/diets/{diet_id}
-```
-## Update 
-```bash
-  PUT http://localhost:3000/api/diets/{diet_id}
-  body: JSON
-  {
-    "name":"example diet",
-    "description": "example diet",
-    "cals":"example diet"
-}
-```
+Testable endpoints are provided as a Postman 
+collection in the root directory of the project.
+![Postman](https://www.zeljkovic.sh/wp-content/uploads/2022/02/1_QOx_tPV5wJnhTzAGhfIiLA.png)
 
-
+## Steps to run the collection in Postman
+1. Install the project
+2. Run docker or start PG database
+3. Import the collection into Postman
+4. Test each endpoint provided.
