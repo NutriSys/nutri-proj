@@ -4,10 +4,11 @@ import { Repository } from 'typeorm';
 import { CreateTemplateDto } from '../dto/create-template.dto';
 import { UpdateTemplateDto } from '../dto/update-template.dto';
 import { Template } from '../entities/template.entity';
+
 @Injectable()
 export class TemplatesService {
   constructor(
-    @InjectRepository(Template) private patientRepo: Repository<Template>,
+    @InjectRepository(Template) private templateRepo: Repository<Template>,
   ) {}
 
   create(_createTemplateDto: CreateTemplateDto) {
@@ -22,7 +23,7 @@ export class TemplatesService {
     return `This action returns a #${id} template`;
   }
 
-  update(id: number, _updateTemplateDto: UpdateTemplateDto) {
+  update(id: number, updateTemplateDto: UpdateTemplateDto) {
     return `This action updates a #${id} template`;
   }
 

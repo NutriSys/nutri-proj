@@ -7,7 +7,7 @@ import {
 } from 'typeorm';
 
 @Entity()
-export class Patient {
+export class Template {
   @PrimaryGeneratedColumn()
   idTemplate: number;
 
