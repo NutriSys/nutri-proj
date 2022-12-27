@@ -1,16 +1,10 @@
 import { Module } from '@nestjs/common';
-import { DietsModule } from './diets/diets.module';
-import { PatientsModule } from './patients/patients.module';
 import { TypeOrmModule } from '@nestjs/typeorm';
-import { TemplatesModule } from './templates/templates.module';
-import { dataSourceOptions } from 'db/data-source';
+import { dataSourceOptions } from './db/data-source';
+import { PatientsModule } from './patients/patients.module';
+
 @Module({
-  imports: [
-    TypeOrmModule.forRoot(dataSourceOptions),
-    DietsModule,
-    PatientsModule,
-    TemplatesModule,
-  ],
+  imports: [TypeOrmModule.forRoot(dataSourceOptions), PatientsModule],
   controllers: [],
   providers: [],
 })

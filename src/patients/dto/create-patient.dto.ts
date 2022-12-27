@@ -1,5 +1,4 @@
 import { IsNotEmpty, IsEmail } from 'class-validator';
-
 export class CreatePatientDto {
   @IsNotEmpty()
   namePatient: string;
@@ -15,20 +14,6 @@ export class CreatePatientDto {
   lastApp: string;
 
   @IsNotEmpty()
-  phoneNum: string;
-
-  anotations: string;
-}
-
-export class UpdatePatientDto {
-  namePatient: string;
-
-  email: string;
-
-  DOB: string;
-
-  lastApp: string;
-
   phoneNum: string;
 
   anotations: string;
