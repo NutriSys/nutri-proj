@@ -1,4 +1,12 @@
-import { Controller, Get, Param, Post, Body, Delete } from '@nestjs/common';
+import {
+  Controller,
+  Get,
+  Param,
+  Post,
+  Body,
+  Delete,
+  Put,
+} from '@nestjs/common';
 import { PatientsService } from '../services/patients.services';
 import { CreatePatientDto } from '../dto/patient';
 @Controller('api/patients')
@@ -23,5 +31,10 @@ export class PatientsController {
   @Delete('/:id')
   delete(@Param('id') id: number) {
     return this.patientsService.delete(id);
+  }
+
+  @Put('/:id')
+  update(@Param('id') id: number, @Body() updatePatientDto: CreatePatientDto) {
+    return this.patientsService.update(id, updatePatientDto);
   }
 }

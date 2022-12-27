@@ -19,3 +19,17 @@ export class CreatePatientDto {
 
   anotations: string;
 }
+
+export class UpdatePatientDto {
+  namePatient: string;
+
+  email: string;
+
+  DOB: string;
+
+  lastApp: string;
+
+  phoneNum: string;
+
+  anotations: string;
+}

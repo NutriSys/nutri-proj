@@ -10,6 +10,10 @@ export class PatientsService {
     @InjectRepository(Patient) private patientRepo: Repository<Patient>,
   ) {}
 
+  update(id: number, updatePatientDto: CreatePatientDto) {
+    return this.patientRepo.update(id, updatePatientDto);
+  }
+
   findAll() {
     return this.patientRepo.find();
   }
